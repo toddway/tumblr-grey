@@ -1,0 +1,274 @@
+<html>
+    <head>
+        <title>{Title}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name='text:Disqus Shortname' content='' />
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic|Roboto:400,100,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        
+        <style>
+            * {margin:0}
+            body {background:#eee;margin:0 auto;width:960px;font:normal 15px/22px 'Helvetica Neue', Helvetica, Arial, sans-serif;; line-height:22px; color:#333}
+            h1, h2, h3, h4, h5, h6 {color:#666; font-family: 'Roboto', sans-serif;font-weight:300}
+            img {width:100%}
+            .post-wrap h2, .post-wrap h3, .post-wrap h4, .post-wrap h5, .post-wrap h6 {margin-top: 1.3em;}
+            ul, ol {padding-bottom:20px}
+            h2 {padding-bottom:10px}
+            #header {position: fixed; top: 80px; width:225px; padding:0;}
+            #main {margin: 0 0 0 250px;background:#fff;padding:80px 25px}
+            #main-bg {background:#fff;position:fixed;z-index:-1;height:100%;right:0;width:65%;}
+            #description {margin:20px 0; color:#bbb}
+            .post-wrap {background:#fff; margin: 0 0 1.5em}
+            li.post-wrap {list-style:none}
+            a {color:#33CC33;text-decoration:none}
+            #header h1 a {font-size:52px;letter-spacing:-1px; line-height:50px;display:block;color:#ddd;}
+            #header h1 a:hover {}
+            .pages a {color:#ccc !important;font-family: 'Roboto', sans-serif;font-weight:300;font-size:20px}
+            #posts {padding:0}
+            #tag-title {padding:20px 20px 0; background:#fff;color:#ddd}
+            .tags {display:inline-block}
+            .meta {padding:1.5em 2em 0;}
+            .meta, .meta a {color:#aaa;text-transform:uppercase;font-size:13px;font-weight:bold;font-family: 'Roboto', sans-serif;font-weight:300}
+            #disqus-wrap {background:#eee;padding:20px;border:2px solid #ddd;margin: 0 25px;}
+            .gist {font-size:14px;}
+            .post {padding:0.5em 1.5em 3.5em; }
+            .post-title {margin:0 0 10px !important;padding:0 !important;font-size:25px;color:#666}
+            .post-title a {color:#666}
+            pre code {font-size:14px;overflow-x:auto;background:#f1f1f1;border:1px solid #ddd;border-radius: 6px;margin:0 0 10px;padding:10px}
+            p {margin:0 0 1em}
+            #footer {padding: 0 20px;}
+            #footer a, .read_more_container a, a.link {background: #EEE;padding: 10px;color: #999;}
+                
+            
+            @media screen and (max-width: 970px) {
+                body {margin:10px auto; width: 650px}
+                h1 a {font-size:200%; letter-spacing:-7px}
+                #header {position:relative; top:auto; width:auto;clear:both; margin:15px 35px}
+                #main {margin:0;padding-top:20px}
+                .page {display:inline-block;font-size:1em;margin:0 10px 10px 0}
+            }
+            
+             @media screen and (max-width: 680px) {
+                body {margin:10px 0; width: auto} 
+                #main {padding:20px 5px}
+                #header {margin:15px 25px}
+            }
+            
+        </style>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+<script src="http://static.tumblr.com/fpifyru/VCxlv9xwi/writecapture.js"></script>
+<script src="http://static.tumblr.com/fpifyru/AKFlv9zdu/embedgist.js"></script>
+<!--
+  Usage: just add <div class="gist">[gist URL]</div>
+  Example: <div class="gist">https://gist.github.com/1395926</div>
+-->
+    </head>
+    <body>
+        
+    
+        <div id="header">
+            <h1><a href="/">ToddWay</a></h1>
+    
+            {block:Description}
+                <p id="description">{Description}</p>
+            {/block:Description}
+            
+            {block:HasPages}
+                <div class="pages">
+                    {block:Pages}
+                        <div class="page">
+                            <a href="{URL}">{Label}</a>
+                        </div>
+                    {/block:Pages}
+                    <div class="page">
+                        <a href="/archive">Archive</a>
+                    </div>
+                </div>
+            {/block:HasPages}
+        </div>
+        <div id="main">
+            {block:TagPage}
+                <h2 id="tag-title">#{Tag}</h2>
+            {/block:TagPage}
+        
+            <ul id="posts">
+                <div class = "autopagerize_page_element" >
+                {block:Posts}
+                    <li class="post-wrap">
+                    <div class="meta">
+                        {TimeAgo}
+                        
+                        {block:HasTags}
+                            <div class="tags"> // 
+                                {block:Tags}
+                                    <span class="tag">
+                                        <a href="{TagURL}">#{Tag}</a>
+                                    </span>
+                                {/block:Tags}
+                            </div>
+                        {/block:HasTags}
+                        
+{block:IndexPage} // <a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a>
+<script type="text/javascript">
+    var disqus_shortname = '{text:Disqus Shortname}';
+
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+{/block:IndexPage}
+                    </div>                    
+                    
+                    {block:Text}
+                        <div class="post text">
+                            {block:Title}
+                                <h3 class="post-title"><a href="{Permalink}">{Title}</a></h3>
+                            {/block:Title}
+    
+                            {Body}
+                        </div>
+                    {/block:Text}
+    
+                    {block:Photo}
+                        <div class="post photo">
+                            <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+    {block:Title}
+                                <h2 class="post-title"><a href="{Permalink}">{Title}</a></h3>
+                            {/block:Title}
+                            {block:Caption}
+                                <div class="caption">{Caption}</div>
+                            {/block:Caption}
+                        </div>
+                    {/block:Photo}
+    
+                    {block:Panorama}
+                        <div class="post panorama">
+                            {LinkOpenTag}
+                                <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                            {LinkCloseTag}
+    
+                            {block:Caption}
+                                <div class="caption">{Caption}</div>
+                            {/block:Caption}
+                        </div>
+                    {/block:Panorama}
+    
+                    {block:Photoset}
+                        <div class="post photoset">
+                            {Photoset-500}
+    
+                            {block:Caption}
+                                <div class="caption">{Caption}</div>
+                            {/block:Caption}
+                        </li>
+                    {/block:Photoset}
+    
+                    {block:Quote}
+                        <div class="post quote">
+                            "{Quote}"
+    
+                            {block:Source}
+                                <div class="source">{Source}</div>
+                            {/block:Source}
+                        </div>
+                    {/block:Quote}
+    
+                    {block:Link}
+                        <div class="post link">                        
+                            <h2 class="post-title"><a href="{Permalink}">{Name}</a></h3>    
+                            {block:Description}
+                                <div class="description">{Description} <a href="{URL}" class="link" {Target}>Link</a></div>
+                            {/block:Description}
+                            
+                            
+                        </div>
+                    {/block:Link}
+    
+                    {block:Chat}
+                        <div class="post chat">
+                            {block:Title}
+                                <h2 class="post-title"><a href="{Permalink}">{Title}</a></h3>
+                            {/block:Title}
+    
+                            <ul class="chat">
+                                {block:Lines}
+                                    <li class="{Alt} user_{UserNumber}">
+                                        {block:Label}
+                                            <span class="label">{Label}</span>
+                                        {/block:Label}
+    
+                                        {Line}
+                                    </li>
+                                {/block:Lines}
+                            </ul>
+                        </div>
+                    {/block:Chat}
+    
+                    {block:Video}
+                        <div class="post video">
+                            {Video-500}
+    
+                            {block:Caption}
+                                <div class="caption">{Caption}</div>
+                            {/block:Caption}
+                        </div>
+                    {/block:Video}
+    
+                    {block:Audio}
+                        <div class="post audio">
+                            {AudioPlayerBlack}
+    
+                            {block:Caption}
+                                <div class="caption">{Caption}</div>
+                            {/block:Caption}
+                        </div>
+                    {/block:Audio}
+                    </li>
+                {/block:Posts}
+
+
+                </div>
+            </ul>
+{block:PermalinkPagination}          
+<div id="disqus-wrap">
+{block:IfDisqusShortname}
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'toddway'; 
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+{/block:IfDisqusShortname}
+</div>
+{/block:PermalinkPagination}
+            <p id="footer">
+                {block:PreviousPage}
+                    <a href="{PreviousPage}">&#171; Previous</a>
+                {/block:PreviousPage}
+    
+                {block:NextPage}
+                    <a href="{NextPage}">Next &#187;</a>
+                {/block:NextPage}
+            </p>
+        </div>
+
+        
+    </body>
+</html>
